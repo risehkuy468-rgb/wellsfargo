@@ -1,0 +1,546 @@
+/* Big Picture Quick Balance Modal Styles */
+
+.wf-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: wfBackdropFade 0.25s ease-out;
+}
+
+@keyframes wfBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Wrapper with side carousel peek cards */
+.wf-bigpicture-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Close button on top-right of modal */
+.wf-modal-close-corner {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 40;
+}
+
+.wf-modal-close-corner:hover {
+  background-color: #d71e28;
+  border-color: #d71e28;
+  transform: scale(1.1);
+}
+
+/* Side Peek Cards in background of modal */
+.wf-modal-side-peek {
+  width: 260px;
+  height: 580px;
+  background: linear-gradient(135deg, #780d15 0%, #9c131e 100%);
+  border-radius: 28px;
+  opacity: 0.4;
+  transform: scale(0.85);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.wf-modal-side-peek:hover {
+  opacity: 0.65;
+  transform: scale(0.88);
+}
+
+.wf-modal-side-peek-title {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Carousel navigation arrows on modal */
+.wf-modal-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 35;
+  transition: all 0.2s ease;
+}
+
+.wf-modal-arrow-btn:hover {
+  background-color: #d71e28;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.wf-modal-arrow-btn.prev {
+  left: 20px;
+}
+
+.wf-modal-arrow-btn.next {
+  right: 20px;
+}
+
+/* ---------------- THE ACTIVE MODAL CARD (Exact Match to User Photo) ---------------- */
+.wf-bigpicture-card {
+  width: 375px;
+  max-width: 92vw;
+  height: 670px;
+  background-color: #d71e28; /* Wells Fargo Signature Red */
+  border-radius: 32px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 26px 20px 16px 20px;
+  color: #ffffff;
+  position: relative;
+  z-index: 25;
+  animation: wfModalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+@keyframes wfModalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Header Text matching photo: "See your big picture / All your accounts in one place" */
+.wf-bp-header-text {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.wf-bp-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.wf-bp-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 4px;
+}
+
+/* ---------------- INNER SCREEN / CARD ---------------- */
+.wf-bp-inner-screen {
+  background-color: #ffffff;
+  border-radius: 22px 22px 0 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Status Bar */
+.wf-bp-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px 6px 16px;
+  font-size: 12px;
+  color: #4b5563;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.wf-bp-signoff {
+  background: none;
+  border: none;
+  color: #0056b3;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wf-bp-signoff:hover {
+  text-decoration: underline;
+  color: #d71e28;
+}
+
+/* Inner Scrollable Body */
+.wf-bp-scroll-body {
+  padding: 12px 14px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Greeting: "Good evening, Henry" */
+.wf-bp-greeting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.wf-bp-greeting-text {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Ask Fargo Bar */
+.wf-bp-fargo-bar {
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.wf-bp-fargo-bar:hover {
+  background-color: #e2e8f0;
+}
+
+.wf-bp-fargo-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0056b3 0%, #d71e28 100%);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- ACCOUNTS LIST (Exact Match to User's Photo) ---------------- */
+.wf-bp-accounts-container {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  margin-bottom: 12px;
+}
+
+.wf-bp-account-row {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.wf-bp-account-row:last-child {
+  border-bottom: none;
+}
+
+.wf-bp-account-row:hover {
+  background-color: #f8fafc;
+}
+
+.wf-bp-account-row.selected {
+  background-color: #fafbfc;
+  border-left: 3px solid #d71e28;
+}
+
+.wf-bp-acct-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1e3a8a; /* Blue header as in photo */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wf-bp-acct-balance {
+  font-size: 23px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin: 2px 0 1px 0;
+}
+
+.wf-bp-acct-type {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Expanded details */
+.wf-bp-expanded-box {
+  background-color: #f8fafc;
+  border-top: 1px solid #edf2f7;
+  padding: 10px 12px;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+}
+
+.wf-bp-expanded-metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  color: #475569;
+}
+
+.wf-bp-transfer-btn {
+  background-color: #d71e28;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 7px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+/* ---------------- TABS ROW & PROMO CARD ---------------- */
+.wf-bp-tabs-strip {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+}
+
+.wf-bp-tab-btn {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748b;
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.wf-bp-tab-btn.active {
+  color: #d71e28;
+  border-bottom: 2px solid #d71e28;
+}
+
+/* Bottom Promo matching photo: "Interested in managing your debt?" */
+.wf-bp-promo-tile {
+  background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 9px 11px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.wf-bp-card-thumb {
+  width: 40px;
+  height: 26px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.wf-bp-promo-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+}
+
+.wf-bp-promo-text {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Bottom Dock */
+.wf-bp-dock {
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 7px 4px;
+  text-align: center;
+}
+
+.wf-bp-dock-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.wf-bp-dock-btn.active {
+  color: #d71e28;
+}
+
+/* Fargo Chat Sheet */
+.wf-bp-fargo-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 22px 22px 0 0;
+}
+
+.wf-bp-fargo-modal {
+  background-color: #ffffff;
+  border-radius: 16px 16px 0 0;
+  padding: 14px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 800px) {
+  .wf-modal-backdrop {
+    padding: 8px;
+    align-items: center;
+  }
+
+  .wf-bigpicture-stage {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .wf-modal-side-peek {
+    display: none !important;
+  }
+
+  .wf-modal-arrow-btn {
+    display: none !important;
+  }
+
+  .wf-modal-close-corner {
+    top: 6px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .wf-bigpicture-card {
+    width: 100%;
+    max-width: 390px;
+    height: min(650px, 92vh);
+    max-height: 94vh;
+    border-radius: 26px;
+    padding: 20px 14px 12px 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .wf-bp-header-text {
+    margin-bottom: 12px;
+  }
+
+  .wf-bp-title {
+    font-size: 23px;
+    line-height: 1.15;
+  }
+
+  .wf-bp-sub {
+    font-size: 13px;
+  }
+
+  .wf-bp-inner-screen {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .wf-bp-scroll-body {
+    padding: 10px 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .wf-bp-acct-balance {
+    font-size: 20px;
+  }
+
+  .wf-bp-account-row {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wf-bigpicture-card {
+    padding: 16px 10px 10px 10px;
+    border-radius: 22px;
+  }
+
+  .wf-bp-title {
+    font-size: 20px;
+  }
+
+  .wf-bp-sub {
+    font-size: 12px;
+  }
+
+  .wf-bp-acct-balance {
+    font-size: 18.5px;
+  }
+}

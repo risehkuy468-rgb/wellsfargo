@@ -1,0 +1,542 @@
+/* Wells Fargo Mobile Showcase Carousel Styles */
+
+.wf-showcase-page {
+  min-height: 100vh;
+  background: #f4f4f5;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ---------------- HEADER ---------------- */
+.wf-showcase-header {
+  background-color: #d71e28;
+  color: #ffffff;
+  padding: 14px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wf-showcase-header-content {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wf-showcase-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.wf-showcase-logo {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.wf-showcase-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ---------------- SHOWCASE HERO SECTION ---------------- */
+.wf-carousel-section {
+  padding: 40px 16px 60px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wf-carousel-title-area {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.wf-carousel-main-heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.wf-carousel-main-subtext {
+  font-size: 16px;
+  color: #555555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------------- HORIZONTAL CAROUSEL CONTAINER (Matches user photo) ---------------- */
+.wf-carousel-track-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: 720px;
+}
+
+/* Slider buttons */
+.wf-carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #222222;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.2s ease;
+}
+
+.wf-carousel-nav-btn:hover {
+  background-color: #d71e28;
+  color: #ffffff;
+  border-color: #d71e28;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.wf-carousel-nav-btn.prev {
+  left: 20px;
+}
+
+.wf-carousel-nav-btn.next {
+  right: 20px;
+}
+
+/* Carousel Cards Stage */
+.wf-cards-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  perspective: 1200px;
+}
+
+/* Side Peek Cards */
+.wf-side-card {
+  width: 320px;
+  height: 640px;
+  background: linear-gradient(135deg, #7a0c14 0%, #9e121d 100%);
+  border-radius: 28px;
+  opacity: 0.45;
+  transform: scale(0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  user-select: none;
+}
+
+.wf-side-card:hover {
+  opacity: 0.7;
+  transform: scale(0.88);
+}
+
+.wf-side-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ---------------- THE ACTIVE SHOWCASE CARD (Exact Match to User's Photo) ---------------- */
+.wf-center-card {
+  width: 380px;
+  min-width: 360px;
+  height: 700px;
+  background-color: #d71e28; /* Exact Wells Fargo Red */
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(215, 30, 40, 0.35), 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 20px 24px;
+  color: #ffffff;
+  position: relative;
+  z-index: 20;
+  transform: scale(1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.wf-card-header-text {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.wf-card-main-title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.wf-card-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.3;
+}
+
+/* ---------------- PHONE FRAME INSIDE RED CARD ---------------- */
+.wf-phone-container {
+  background-color: #ffffff;
+  border-radius: 24px 24px 0 0;
+  flex-grow: 1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+/* Phone Status Bar */
+.wf-phone-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px 6px 16px;
+  font-size: 12px;
+  color: #444444;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.wf-phone-signoff-btn {
+  background: none;
+  border: none;
+  color: #0056b3;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wf-phone-signoff-btn:hover {
+  text-decoration: underline;
+  color: #d71e28;
+}
+
+/* Phone Inner Scroll Area */
+.wf-phone-body {
+  padding: 14px 16px;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Greeting matching photo: "Good evening, Henry" */
+.wf-phone-greeting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.wf-phone-greeting-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.2px;
+}
+
+/* Ask Fargo Bar */
+.wf-fargo-bar {
+  background-color: #f3f5f8;
+  border: 1px solid #e1e5ea;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: #4b5563;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.wf-fargo-bar:hover {
+  background-color: #e9ecf2;
+  border-color: #c9d0db;
+}
+
+.wf-fargo-logo-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0056b3 0%, #d71e28 100%);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------- ACCOUNTS CONTAINER INSIDE PHONE (Exact match to photo) ---------------- */
+.wf-phone-accounts-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e4e8;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.wf-phone-account-item {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f2f5;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.wf-phone-account-item:last-child {
+  border-bottom: none;
+}
+
+.wf-phone-account-item:hover {
+  background-color: #f9fafb;
+}
+
+.wf-phone-account-item.active {
+  background-color: #fbfcfe;
+  border-left: 3px solid #d71e28;
+}
+
+.wf-phone-account-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f3a60; /* Blue/Navy header as in photo */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wf-phone-account-balance {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+.wf-phone-account-sub {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Account Details Expanded Tray inside phone */
+.wf-phone-tray-expanded {
+  background-color: #f8fafc;
+  border-top: 1px solid #edf0f5;
+  padding: 12px 14px;
+  font-size: 12px;
+}
+
+.wf-phone-tray-metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  color: #4b5563;
+}
+
+.wf-phone-tray-btn {
+  background-color: #d71e28;
+  color: #ffffff;
+  width: 100%;
+  padding: 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------------- PHONE TABS & PROMO TILE ---------------- */
+.wf-phone-tabs-row {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid #edf0f5;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.wf-phone-tabs-row::-webkit-scrollbar {
+  display: none;
+}
+
+.wf-phone-tab-item {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.wf-phone-tab-item.active {
+  color: #d71e28;
+  border-bottom: 2px solid #d71e28;
+}
+
+/* Bottom Promo Inside Phone (matching photo: "interested in managing your debt?") */
+.wf-phone-promo-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.wf-phone-card-graphic {
+  width: 44px;
+  height: 28px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+.wf-phone-promo-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.25;
+}
+
+.wf-phone-promo-sub {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ---------------- PHONE BOTTOM NAVIGATION DOCK ---------------- */
+.wf-phone-dock {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.wf-phone-dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #64748b;
+  font-size: 9.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wf-phone-dock-item.active {
+  color: #d71e28;
+}
+
+/* ---------------- CAROUSEL INDICATOR DOTS ---------------- */
+.wf-carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.wf-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wf-dot.active {
+  width: 26px;
+  border-radius: 5px;
+  background-color: #d71e28;
+}
+
+/* ---------------- FARGO ASSISTANT CHAT MODAL ---------------- */
+.wf-fargo-chat-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 24px 24px 0 0;
+}
+
+.wf-fargo-sheet {
+  background-color: #ffffff;
+  border-radius: 18px 18px 0 0;
+  padding: 16px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  animation: wfSheetUp 0.25s ease-out;
+}
+
+@keyframes wfSheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .wf-side-card {
+    display: none;
+  }
+  
+  .wf-center-card {
+    width: 92vw;
+    min-width: 320px;
+  }
+}
